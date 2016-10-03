@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Xml.Linq;
 
 namespace Project285
 {
@@ -41,12 +34,7 @@ namespace Project285
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="C: \Users\Ryan Simeon\documents\visual studio 2015\Projects\Project285\Project285\Data.mdf";Integrated Security=True;Connect Timeout=30");
-            //the only broken part of the code currently
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username= ' " + textBox1.Text + "' and Password= '" + textBox2.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            if (textBox1.Text.ToString()== "Super" && textBox2.Text.ToString()== "Broms")
             {
                 this.Hide();
                 Main ss = new Main();
